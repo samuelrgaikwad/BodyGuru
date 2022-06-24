@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+body {
+  background-color: rgb(64, 63, 63);
+}
+
+/* NAVBAR */
+
+/* navbar */
+.navbar a {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: red;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: black;
+}
+
+.navbar {
+  background-color: gray;
+  height: auto;
+  padding: 5px;
+}
+.navbar ul {
+  margin-right: 50px;
+}
+
+.nav-item {
+  margin-right: 30px;
+}
+
+.nav-item a {
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+.nav-item a:hover {
+  color: red;
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  margin-right: 7px;
+  width: 23px;
+}
+
+/* carousel */
+/* carousel */
+/* carousel */
+
+.home .carousel-item {
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.home .carousel-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.home .carousel-item .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home .carousel-item h1 {
+  color: rgb(216, 49, 91);
+  font-weight: 1000;
+  font-size: 5rem;
+  opacity: 0;
+  margin: 30px;
+}
+
+.home .carousel-item h2 {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 2.5rem;
+  opacity: 0;
+}
+
+.home .carousel-item.active h1 {
+  animation: fadeInLeft 0.3s ease forwards;
+}
+.home .carousel-item.active h2 {
+  animation: fadeInRight 0.3s ease forwards;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* CARDS */
+
+.card_box {
+  width: 1100px;
+  margin: 0px auto;
+  /* background-color: aqua; */
+  font-family: "Lato", sans-serif;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  /* height: 100vh; */
+}
+/* Float three columns side by side */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0px -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .container {
+    width: 100%;
+  }
+
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(193, 32, 32);
+  /* background-color: #fff; */
+  border-radius: 10px;
+  cursor: pointer;
+}
+.card .profile {
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.card:hover .profile {
+  transform: scale(1.4);
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.card .content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.card .content .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #13e13ce6;
+  /* background-color: #f1f1f1e6; */
+  transition: 1s;
+
+  z-index: 1;
+  padding: 10px;
+}
+
+.from-left {
+  top: 0;
+  left: -100%;
+}
+.card:hover .content .from-left {
+  left: 0%;
+}
+
+.from-bottom {
+  top: 100%;
+  left: 0;
+}
+.card:hover .content .from-bottom {
+  top: 0%;
+}
+
+.from-right {
+  top: 0%;
+  right: -100%;
+}
+.card:hover .content .from-right {
+  right: 0;
+}
+
+.card .content .back h3 {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.card .content .back .tem-img {
+  border-radius: 100%;
+}
+
+.card .content .back .des {
+  font-size: 13px;
+  padding: 20px 0px;
+}
+.card .content .back .social-icon {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.card .content .back .social-icon li {
+  display: inline-block;
+}
+
+.card .content .back .social-icon li a {
+  display: block;
+  background: rgb(16, 8, 240);
+  /* background: #333; */
+  /* color: #fff; */
+  color: rgb(240, 8, 217);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 100%;
+}
+
+.profile {
+  height: 460px;
+}
